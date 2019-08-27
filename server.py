@@ -6,6 +6,11 @@ import http.server
 import socketserver
 from io import BytesIO
 import os
+from socketserver import  ThreadingMixIn
+from http.server import HTTPServer
+
+from threading import Thread
+
 
 PORT = 8080
 
@@ -35,7 +40,18 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         finally:
             f.close()
 
-#MyHandler = Handler
-with socketserver.TCPServer(("", PORT), Handler) as httpd:
+
+class ThreadingHTTPServer(ThreadingMixIn, HTTPServer):
+    pass
+
+
+
+def main(args=None):
+    server = ThreadingHTTPServer(("localhost",PORT), Handler)
     print("serving at port", PORT)
-    httpd.serve_forever()
+    server.serve_forever()
+
+if __name__ == "__main__":
+    main()
+
+
