@@ -1,0 +1,16 @@
+{
+    "name": "python-server-simple",
+    "description": "simple rest service in python",
+    "version": "3-Alpha",
+    "language": "python",
+    "interpreter-version": "3",
+    "contributors": [
+        {
+            "name": "Nikolaj Majorov",
+            "email": "nikolaj@majorov.biz"
+        }
+    ],
+    "build_trigger": {
+        "every": "1 minutes"
+    }
+}
