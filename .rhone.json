@@ -3,6 +3,7 @@
     "description": "simple rest service in python",
     "version": "3-Alpha",
     "language": "python",
+    "apiVersion": "build.rhone.io/v1",
     "interpreter-version": "3",
     "contributors": [
         {
