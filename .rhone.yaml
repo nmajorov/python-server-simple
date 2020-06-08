@@ -1,0 +1,13 @@
+---
+apiVersion: build.rhone.io/v1
+build_trigger:
+  every: 1 minutes
+contributors:
+- email: nikolaj@majorov.biz
+  name: Nikolaj Majorov
+description: simple rest service in python
+interpreter-version: '3'
+language: python
+name: python-server-simple
+version: 3-Alpha
+
