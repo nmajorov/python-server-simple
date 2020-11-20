@@ -1,7 +1,5 @@
 ---
-apiVersion: build.rhone.io/v1
-build_trigger:
-  every: 1 minutes
+apiVersion: build.rhone.io/v2
 contributors:
   - email: nikolaj@majorov.biz
     name: Nikolaj Majorov
@@ -10,3 +8,6 @@ interpreter-version: '3'
 language: python
 name: python-server-simple
 version: 3-Alpha
+build_podman_params:
+  - --add-host "{{ rhone_server_hostname }}:{{rhone_server_ip}}"
+  - -e  KEYCLOAK_URL="{{ rhone_server_hostname }}:8080"
