@@ -8,6 +8,10 @@ interpreter-version: '3'
 language: python
 name: python-server-simple
 version: 3-Alpha
+env:
+  - TEST_SEVER_HOST = "{{rhone_server_hostname}}"
+  - TEST_SERVER_IP = "{{ rhone_server_ip }}"
+
 build_podman_params:
   - --add-host "{{ rhone_server_hostname }}:{{rhone_server_ip}}"
   - -e  KEYCLOAK_URL="{{ rhone_server_hostname }}:8080"
