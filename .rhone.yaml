@@ -15,3 +15,12 @@ env:
 build_podman_params:
   - --add-host "{{ rhone_server_hostname }}:{{rhone_server_ip}}"
   - -e  KEYCLOAK_URL="{{ rhone_server_hostname }}:8080"
+
+scripts:
+  pre_build:
+    - python --version
+    - pip install -U pip
+    - pip install -r requirements.txt
+    - pip list
+  build:
+    - python setup.py test
